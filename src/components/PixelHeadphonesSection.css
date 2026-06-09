@@ -1,62 +1,124 @@
-/* Signature Section: Premium Minimal */
+/* Signature Section: scroll-driven pixel reveal */
 .pixel-headphones-section {
-  position: relative;
-  padding: clamp(6rem, 12vh, 10rem) var(--space-6);
-  overflow: hidden;
+    position: relative;
+    min-height: 165vh;
+    padding: 0 var(--space-6);
+    overflow: clip;
+    border-top: 1px solid
+        color-mix(in srgb, var(--color-border-subtle) 55%, transparent);
+}
+
+.pixel-headphones-section::before {
+    content: '';
+    position: absolute;
+    inset: 12% 8% auto;
+    height: 52rem;
+    pointer-events: none;
+    background: radial-gradient(
+        circle at 50% 42%,
+        color-mix(in srgb, var(--color-accent) 13%, transparent),
+        transparent 58%
+    );
+    opacity: 0.48;
+    filter: blur(28px);
 }
 
 .pixel-headphones-section__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(3rem, 6vh, 5rem);
-  max-width: 50rem;
-  margin: 0 auto;
-  text-align: center;
+    position: sticky;
+    top: 0;
+    min-height: 100svh;
+    width: min(var(--content-width), calc(100vw - (var(--space-6) * 2)));
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+    gap: clamp(1.5rem, 4vh, 3rem);
+    text-align: center;
+    padding: clamp(4rem, 8vh, 6rem) 0;
 }
 
 .pixel-headphones-section__intro {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
+    display: grid;
+    gap: var(--space-3);
+    justify-items: center;
 }
 
 .pixel-headphones-section__eyebrow {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-text-dim);
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-text-dim);
 }
 
 .pixel-headphones-section__title {
-  margin: 0;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--color-text-strong);
+    margin: 0;
+    max-width: 52rem;
+    font-size: clamp(2.45rem, 7vw, 5.4rem);
+    font-weight: 520;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+    color: var(--color-text-strong);
 }
 
 .pixel-headphones-section__stage {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: min(20rem, 50vh);
-  padding: var(--space-6);
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: clamp(26rem, 58vh, 42rem);
+    padding: 0;
+}
+
+.pixel-headphones-section__stage::before {
+    content: '';
+    position: absolute;
+    width: min(46rem, 78vw);
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background: radial-gradient(
+        circle,
+        color-mix(in srgb, var(--color-accent) 10%, transparent),
+        transparent 62%
+    );
+    opacity: 0.65;
+    filter: blur(34px);
+    pointer-events: none;
 }
 
 .pixel-headphones-section__caption {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.01em;
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1.4vw, 0.9rem);
+    color: var(--color-text-muted);
+    letter-spacing: 0.08em;
+}
+
+[data-theme='light'] .pixel-headphones-section::before {
+    opacity: 0.3;
+}
+
+[data-theme='light'] .pixel-headphones-section__stage::before {
+    opacity: 0.34;
 }
 
 @media (max-width: 48rem) {
-  .pixel-headphones-section {
-    padding: clamp(4rem, 10vh, 6rem) var(--space-5);
-  }
+    .pixel-headphones-section {
+        min-height: 140vh;
+        padding-inline: var(--space-5);
+    }
+
+    .pixel-headphones-section__container {
+        width: 100%;
+        padding-block: clamp(3rem, 8vh, 4.5rem);
+    }
+
+    .pixel-headphones-section__title {
+        font-size: clamp(2.25rem, 12vw, 3.75rem);
+    }
+
+    .pixel-headphones-section__stage {
+        min-height: clamp(22rem, 52vh, 34rem);
+    }
 }
