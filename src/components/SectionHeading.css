@@ -1,0 +1,21 @@
+.section-heading {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 50rem;
+}
+
+.section-heading__eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.section-heading__description {
+  margin: 0;
+  color: var(--color-text-muted);
+  max-width: 44rem;
+}

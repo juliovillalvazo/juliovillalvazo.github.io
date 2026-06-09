@@ -1,0 +1,167 @@
+/* Experience Section: Editorial Case Studies */
+.experience-section {
+  padding: clamp(6rem, 12vh, 10rem) var(--space-6) clamp(4rem, 8vh, 6rem);
+}
+
+.experience-section__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 54rem;
+  margin: 0 auto clamp(4rem, 8vh, 6rem);
+  text-align: center;
+}
+
+.experience-section__eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+
+.experience-section__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-text-strong);
+  line-height: 1.2;
+}
+
+.experience-section__grid {
+  display: grid;
+  gap: clamp(3rem, 6vh, 5rem);
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+/* Experience Card */
+.experience-card {
+  display: grid;
+  gap: var(--space-5);
+  padding: clamp(var(--space-6), 5vw, var(--space-7));
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--color-border-subtle) 60%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-surface-elevated) 20%, transparent),
+    color-mix(in srgb, var(--color-surface) 12%, transparent)
+  );
+  backdrop-filter: blur(12px);
+  transition: border-color var(--duration-medium) var(--ease-standard);
+}
+
+.experience-card:hover {
+  border-color: color-mix(in srgb, var(--color-border) 75%, transparent);
+}
+
+.experience-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border-subtle) 55%, transparent);
+}
+
+.experience-card__company {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  color: var(--color-text-strong);
+  line-height: 1.2;
+}
+
+.experience-card__context {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.01em;
+}
+
+.experience-card__summary {
+  margin: 0;
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--color-text-soft);
+}
+
+.experience-card__highlights {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.experience-card__highlights li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.experience-card__highlights li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+.experience-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid color-mix(in srgb, var(--color-border-subtle) 50%, transparent);
+}
+
+.experience-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.experience-card__stack-item {
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-soft);
+  background: color-mix(in srgb, var(--color-surface) 40%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-border-subtle) 65%, transparent);
+}
+
+.experience-card__link {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+  flex-shrink: 0;
+}
+
+.experience-card__link:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 48rem) {
+  .experience-section {
+    padding: clamp(4rem, 10vh, 6rem) var(--space-5) clamp(3rem, 6vh, 4rem);
+  }
+
+  .experience-card {
+    padding: var(--space-5);
+  }
+
+  .experience-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
