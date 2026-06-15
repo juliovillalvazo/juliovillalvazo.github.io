@@ -104,6 +104,24 @@ export function TerminalHero() {
               <p className="terminal-hero__domains">
                 Audio systems · AI workflows · Cloud platforms
               </p>
+              <div className="terminal-hero__links">
+                <a
+                  href="https://github.com/juliovillalvazo"
+                  className="terminal-hero__link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/juliovillalvazo"
+                  className="terminal-hero__link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -111,7 +129,10 @@ export function TerminalHero() {
         <p
           className={`terminal-hero__scroll-hint ${isComplete || prefersReducedMotion ? 'terminal-hero__scroll-hint--visible' : ''}`}
         >
-          Scroll to continue
+          <span>Scroll to continue</span>
+          <span className="terminal-hero__scroll-arrow" aria-hidden="true">
+            ↓
+          </span>
         </p>
       </div>
     </section>

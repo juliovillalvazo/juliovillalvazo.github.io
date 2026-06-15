@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100svh;
-  padding: var(--space-6);
+  padding: clamp(6rem, 11vh, 8rem) var(--space-6) clamp(3.5rem, 8vh, 5rem);
   overflow: hidden;
 }
 
@@ -100,7 +100,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-7);
+  gap: var(--space-5);
   width: 100%;
   max-width: min(56rem, 90vw);
 }
@@ -341,8 +341,38 @@
   letter-spacing: 0.01em;
 }
 
+.terminal-hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+.terminal-hero__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.46rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-surface) 42%, transparent);
+  color: var(--color-text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.terminal-hero__link:hover {
+  border-color: color-mix(in srgb, #10b981 64%, transparent);
+  color: #10b981;
+  transform: translateY(-1px);
+}
+
 /* Scroll Hint */
 .terminal-hero__scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   margin: 0;
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -355,6 +385,13 @@
 
 .terminal-hero__scroll-hint--visible {
   opacity: 0.7;
+}
+
+.terminal-hero__scroll-arrow {
+  color: #10b981;
+  font-size: 1rem;
+  line-height: 1;
+  animation: scroll-arrow-blink 1.15s ease-in-out infinite;
 }
 
 /* Visually Hidden (for screen readers only) */
@@ -394,10 +431,23 @@
   }
 }
 
+@keyframes scroll-arrow-blink {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(-0.12rem);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0.12rem);
+  }
+}
+
 /* Responsive */
 @media (max-width: 48rem) {
   .terminal-hero {
-    padding: var(--space-5) var(--space-4);
+    min-height: 100svh;
+    padding: clamp(5rem, 10vh, 6rem) var(--space-4) clamp(3rem, 7vh, 4.5rem);
   }
 
   .terminal-hero__container {
@@ -420,7 +470,8 @@
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   .terminal-hero__cursor,
-  .terminal-hero__glow {
+  .terminal-hero__glow,
+  .terminal-hero__scroll-arrow {
     animation: none;
   }
 

@@ -94,11 +94,7 @@ body {
 }
 
 :root body {
-  background:
-    radial-gradient(circle at 14% 10%, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 26%),
-    radial-gradient(circle at 84% 14%, color-mix(in srgb, var(--color-highlight) 12%, transparent), transparent 28%),
-    radial-gradient(circle at 50% 48%, color-mix(in srgb, var(--color-accent) 5%, transparent), transparent 34%),
-    linear-gradient(180deg, #04070d 0%, #09111d 44%, #060a13 100%);
+  background: var(--color-background);
 }
 
 :root[data-theme='light'] body {

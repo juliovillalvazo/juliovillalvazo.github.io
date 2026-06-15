@@ -13,7 +13,7 @@ interface FloatingMenuProps {
   onToggleTheme: () => void
 }
 
-export function FloatingMenu({ theme, onToggleTheme }: FloatingMenuProps) {
+export function FloatingMenu({ items, theme, onToggleTheme }: FloatingMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
   const drawerRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef<HTMLButtonElement>(null)
@@ -40,32 +40,6 @@ export function FloatingMenu({ theme, onToggleTheme }: FloatingMenuProps) {
     setIsOpen(false)
   }
 
-  const mainNav = [
-    { icon: '01', label: 'Home', href: '#home' },
-    { icon: '02', label: 'Experience', href: '#experience' },
-    { icon: '03', label: 'Projects', href: '#projects' },
-    { icon: '04', label: 'Stack', href: '#tech-stack' },
-    { icon: '05', label: 'About', href: '#about' },
-  ]
-
-  const connectNav = [
-    {
-      icon: '↗',
-      label: 'Schedule a Call',
-      href: 'mailto:juliovillalvazo26@gmail.com?subject=Portfolio%20-%20Schedule%20a%20call',
-      external: true,
-    },
-    { icon: '✉', label: 'Email', href: 'mailto:juliovillalvazo26@gmail.com', external: true },
-    { icon: 'GH', label: 'GitHub', href: 'https://github.com/juliovillalvazo', external: true },
-    {
-      icon: 'IN',
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/juliovillalvazo',
-      external: true,
-    },
-    { icon: '↓', label: 'Resume', href: '/resume.pdf', download: true },
-  ]
-
   return (
     <>
       <button
@@ -87,7 +61,7 @@ export function FloatingMenu({ theme, onToggleTheme }: FloatingMenuProps) {
             <header className="nav-drawer__header">
               <div className="nav-drawer__header-text">
                 <h2 className="nav-drawer__title">Command</h2>
-                <p className="nav-drawer__subtitle">Navigation / Contact</p>
+                <p className="nav-drawer__subtitle">Work / Contact info</p>
               </div>
               <button
                 className="nav-drawer__close"
@@ -100,26 +74,9 @@ export function FloatingMenu({ theme, onToggleTheme }: FloatingMenuProps) {
 
             <div className="nav-drawer__content">
               <nav className="nav-section">
-                <h3 className="nav-section__title">Main</h3>
+                <h3 className="nav-section__title">Menu</h3>
                 <ul className="nav-section__list">
-                  {mainNav.map((item) => (
-                    <li key={item.icon}>
-                      <a href={item.href} className="nav-item" onClick={handleNavClick}>
-                        <span className="nav-item__icon">{item.icon}</span>
-                        <span className="nav-item__label">{item.label}</span>
-                        <span className="nav-item__arrow" aria-hidden="true">
-                          →
-                        </span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-
-              <nav className="nav-section">
-                <h3 className="nav-section__title">Connect</h3>
-                <ul className="nav-section__list">
-                  {connectNav.map((item) => (
+                  {items.map((item, index) => (
                     <li key={item.label}>
                       <a
                         href={item.href}
@@ -127,9 +84,10 @@ export function FloatingMenu({ theme, onToggleTheme }: FloatingMenuProps) {
                         onClick={handleNavClick}
                         target={item.external ? '_blank' : undefined}
                         rel={item.external ? 'noreferrer' : undefined}
-                        download={'download' in item ? true : undefined}
                       >
-                        <span className="nav-item__icon">{item.icon}</span>
+                        <span className="nav-item__icon">
+                          {index + 1 < 10 ? `0${index + 1}` : index + 1}
+                        </span>
                         <span className="nav-item__label">{item.label}</span>
                         <span className="nav-item__arrow" aria-hidden="true">
                           →

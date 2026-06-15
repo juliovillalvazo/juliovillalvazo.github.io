@@ -4,7 +4,7 @@
   top: 1.5rem;
   right: 1.5rem;
   z-index: 1000;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
@@ -251,6 +251,7 @@
 /* Responsive */
 @media (max-width: 48rem) {
   .nav-trigger {
+    display: flex;
     top: 1rem;
     right: 1rem;
     width: 2.25rem;
