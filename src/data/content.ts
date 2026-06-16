@@ -101,7 +101,7 @@ export const experiences: ExperienceItem[] = [
   {
     id: 'experience-visa-tcs',
     company: 'Visa / TCS',
-    website: 'https://www.visa.com',
+    website: 'https://www.visa.com/en-us',
     context: 'Current work · Fraud detection, distributed systems, secure deployment',
     roleSummary:
       'Contributed to fraud detection systems built on Java microservices, event-driven workflows, secure deployment configuration, and cloud infrastructure.',

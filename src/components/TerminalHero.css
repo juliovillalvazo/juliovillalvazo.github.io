@@ -4,8 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100svh;
-  padding: clamp(6rem, 11vh, 8rem) var(--space-6) clamp(3.5rem, 8vh, 5rem);
+  min-height: min(100svh, 54rem);
+  padding: clamp(5rem, 9vh, 7rem) var(--space-6) clamp(2.25rem, 5vh, 3.25rem);
   overflow: hidden;
 }
 
@@ -276,10 +276,16 @@
   align-items: center;
   gap: clamp(0.4rem, 1vw, 0.6rem);
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+  font-weight: 560;
   font-size: clamp(1.5rem, 5vw, 3.5rem);
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   color: var(--color-text-strong);
 }
 
@@ -328,15 +334,17 @@
 
 .terminal-hero__role {
   margin: 0;
+  font-family: var(--font-body);
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  font-weight: 500;
+  font-weight: 700;
   color: var(--color-text-strong);
 }
 
 .terminal-hero__domains {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+  font-weight: 400;
   color: var(--color-text-muted);
   letter-spacing: 0.01em;
 }
@@ -357,7 +365,8 @@
   border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--color-surface) 42%, transparent);
   color: var(--color-text-soft);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
+  font-weight: 400;
   font-size: 0.78rem;
   text-decoration: none;
 }
@@ -446,8 +455,8 @@
 /* Responsive */
 @media (max-width: 48rem) {
   .terminal-hero {
-    min-height: 100svh;
-    padding: clamp(5rem, 10vh, 6rem) var(--space-4) clamp(3rem, 7vh, 4.5rem);
+    min-height: min(100svh, 48rem);
+    padding: clamp(4.5rem, 9vh, 5.5rem) var(--space-4) clamp(2rem, 5vh, 3rem);
   }
 
   .terminal-hero__container {

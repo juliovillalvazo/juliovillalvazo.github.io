@@ -1,7 +1,8 @@
 :root {
-  --font-sans: Inter, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-display: Inter, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', 'SFMono-Regular', 'SF Mono', Consolas, 'Liberation Mono', monospace;
+  --font-sans: 'Bitcount Grid Double', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Bitcount Grid Double', 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'Bitcount Grid Double', 'SFMono-Regular', 'SF Mono', Consolas, 'Liberation Mono', monospace;
+  --font-body: Quantico, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -47,7 +48,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
   color-scheme: dark;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
@@ -165,6 +166,11 @@ h3 {
   margin: 0;
   color: var(--color-text-strong);
   font-family: var(--font-display);
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.55,
+    "ELSH" 0,
+    "ELXP" 0;
   line-height: 1.08;
 }
 
@@ -184,6 +190,7 @@ h3 {
 
 p {
   margin: 0;
+  font-family: var(--font-body);
 }
 
 ul {
