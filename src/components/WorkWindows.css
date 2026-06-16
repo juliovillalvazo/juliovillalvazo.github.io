@@ -288,16 +288,11 @@
   white-space: nowrap;
 }
 
-.work-window__flag {
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
-  letter-spacing: 0;
-}
-
 .work-window__body {
   display: grid;
   gap: var(--space-5);
   padding: var(--space-5);
+  cursor: pointer;
 }
 
 .work-window__heading-row {
@@ -325,11 +320,6 @@
   color: var(--color-text-strong);
   min-width: 0;
   text-align: right;
-}
-
-.work-window__title-flag {
-  font-size: 1rem;
-  line-height: 1;
 }
 
 .work-window__title-logo-frame {

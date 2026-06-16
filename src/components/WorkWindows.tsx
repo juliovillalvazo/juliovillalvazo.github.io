@@ -27,7 +27,6 @@ const experienceAssets: Record<
         accent: string;
         accentSoft: string;
         accentDeep: string;
-        flags: string;
         preview: 'desktop' | 'mobile';
         screenshot?: string;
         needsDarkLogoMat?: boolean;
@@ -45,7 +44,6 @@ const experienceAssets: Record<
         accent: '#22d3ee',
         accentSoft: '#a78bfa',
         accentDeep: '#052a37',
-        flags: '🇺🇸',
         preview: 'desktop',
         needsDarkLogoMat: true,
         links: [{ label: 'Audible', href: 'https://www.audible.com' }],
@@ -57,7 +55,6 @@ const experienceAssets: Record<
         accent: '#34d399',
         accentSoft: '#f59e0b',
         accentDeep: '#08291f',
-        flags: '🇺🇸 🇮🇳',
         preview: 'desktop',
         links: [{ label: 'Visa', href: 'https://www.visa.com/en-us' }],
     },
@@ -68,7 +65,6 @@ const experienceAssets: Record<
         accent: '#60a5fa',
         accentSoft: '#f472b6',
         accentDeep: '#091f3a',
-        flags: '🇺🇸',
         preview: 'desktop',
         links: [{ label: 'Google', href: 'https://about.google' }],
     },
@@ -79,7 +75,6 @@ const experienceAssets: Record<
         accent: '#38bdf8',
         accentSoft: '#818cf8',
         accentDeep: '#08283a',
-        flags: '🇺🇸',
         preview: 'desktop',
         links: [{ label: 'USAA', href: 'https://www.usaa.com/' }],
     },
@@ -90,7 +85,6 @@ const experienceAssets: Record<
         accent: '#facc15',
         accentSoft: '#2dd4bf',
         accentDeep: '#332708',
-        flags: '🇺🇸 🇲🇽',
         preview: 'desktop',
         needsDarkLogoMat: true,
         links: [
@@ -107,7 +101,6 @@ const experienceAssets: Record<
         accent: '#fb7185',
         accentSoft: '#818cf8',
         accentDeep: '#35101b',
-        flags: '🇲🇽',
         preview: 'mobile',
         needsDarkLogoMat: true,
         links: [
@@ -272,25 +265,25 @@ export function WorkWindows() {
                                         </button>
                                     </div>
                                     <div className='work-window__path'>
-                                        <span
-                                            className='work-window__flag'
-                                            aria-label='Company country'
-                                        >
-                                            {assets.flags}
-                                        </span>
                                         {experience.company.toLowerCase()}
                                     </div>
                                 </div>
 
-                                <div className='work-window__body'>
+                                <button
+                                    className='work-window__body work-window__summary'
+                                    type='button'
+                                    aria-expanded={isActive}
+                                    aria-controls={`${experience.id}-details`}
+                                    disabled={isMinimized}
+                                    onClick={(event) => {
+                                        event.stopPropagation();
+                                        setActiveId(
+                                            isActive ? null : experience.id,
+                                        );
+                                    }}
+                                >
                                     <div className='work-window__heading-row'>
                                         <div className='work-window__title'>
-                                            <span
-                                                className='work-window__title-flag'
-                                                aria-hidden='true'
-                                            >
-                                                {assets.flags}
-                                            </span>
                                             <span className='work-window__title-logo-frame'>
                                                 {assets.logo ? (
                                                     <img
@@ -311,60 +304,44 @@ export function WorkWindows() {
                                             {experience.company}
                                         </div>
                                     </div>
-                                    <button
-                                        className='work-window__summary'
-                                        type='button'
-                                        aria-expanded={isActive}
-                                        aria-controls={`${experience.id}-details`}
-                                        disabled={isMinimized}
-                                        onClick={(event) => {
-                                            event.stopPropagation();
-                                            setActiveId(
-                                                isActive
-                                                    ? null
-                                                    : experience.id,
-                                            );
-                                        }}
-                                    >
-                                        <span className='work-window__visual'>
-                                            <span
-                                                className='work-window__visual-scan'
-                                                aria-hidden='true'
-                                            />
-                                            <span
-                                                className={`work-window__preview work-window__preview--${assets.preview}`}
-                                                aria-label={`${experience.company} ${assets.preview} product preview`}
-                                            >
-                                                {assets.screenshot ? (
-                                                    <img
-                                                        className='work-window__preview-image'
-                                                        src={assets.screenshot}
-                                                        alt={`${experience.company} ${assets.preview === 'mobile' ? 'mobile app' : 'website'} preview`}
-                                                    />
-                                                ) : (
-                                                    <>
-                                                        <span className='work-window__preview-bar'>
+                                    <span className='work-window__visual'>
+                                        <span
+                                            className='work-window__visual-scan'
+                                            aria-hidden='true'
+                                        />
+                                        <span
+                                            className={`work-window__preview work-window__preview--${assets.preview}`}
+                                            aria-label={`${experience.company} ${assets.preview} product preview`}
+                                        >
+                                            {assets.screenshot ? (
+                                                <img
+                                                    className='work-window__preview-image'
+                                                    src={assets.screenshot}
+                                                    alt={`${experience.company} ${assets.preview === 'mobile' ? 'mobile app' : 'website'} preview`}
+                                                />
+                                            ) : (
+                                                <>
+                                                    <span className='work-window__preview-bar'>
+                                                        <span />
+                                                        <span />
+                                                        <span />
+                                                    </span>
+                                                    <span className='work-window__preview-content'>
+                                                        <span className='work-window__preview-row work-window__preview-row--wide' />
+                                                        <span className='work-window__preview-row' />
+                                                        <span className='work-window__preview-grid'>
+                                                            <span />
                                                             <span />
                                                             <span />
                                                             <span />
                                                         </span>
-                                                        <span className='work-window__preview-content'>
-                                                            <span className='work-window__preview-row work-window__preview-row--wide' />
-                                                            <span className='work-window__preview-row' />
-                                                            <span className='work-window__preview-grid'>
-                                                                <span />
-                                                                <span />
-                                                                <span />
-                                                                <span />
-                                                            </span>
-                                                            <span className='work-window__preview-cta' />
-                                                        </span>
-                                                    </>
-                                                )}
-                                            </span>
+                                                        <span className='work-window__preview-cta' />
+                                                    </span>
+                                                </>
+                                            )}
                                         </span>
-                                    </button>
-                                </div>
+                                    </span>
+                                </button>
 
                                 <div
                                     id={`${experience.id}-details`}

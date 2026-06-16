@@ -82,7 +82,7 @@ export function TerminalHero() {
             {/* Accessible final text for screen readers */}
             <div className="visually-hidden">
               <h1>Julio Villalvazo - Full-Stack Software Engineer</h1>
-              <p>Audio systems, AI workflows, Cloud platforms</p>
+              <p>Frontend, Backend, DevOps, AWS, Banking and streaming platforms</p>
             </div>
 
             {/* Visual typing animation */}
@@ -102,7 +102,7 @@ export function TerminalHero() {
             >
               <h2 className="terminal-hero__role">Full-Stack Software Engineer</h2>
               <p className="terminal-hero__domains">
-                Audio systems · AI workflows · Cloud platforms
+                Frontend · Backend · DevOps · AWS · Banking and streaming platforms
               </p>
               <div className="terminal-hero__links">
                 <a

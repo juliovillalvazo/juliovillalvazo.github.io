@@ -32,13 +32,13 @@ export const brandRows: BrandItem[][] = [
     },
     {
       id: 'google-alphabet',
-      name: 'Google / Alphabet',
+      name: 'Google - Alphabet / TCS',
       website: 'https://about.google',
       experienceId: 'experience-google-alphabet',
     },
     {
       id: 'usaa',
-      name: 'USAA',
+      name: 'USAA / TCS',
       website: 'https://www.usaa.com',
       experienceId: 'experience-usaa',
     },
