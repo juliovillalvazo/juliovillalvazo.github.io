@@ -385,17 +385,35 @@
   align-items: center;
   gap: 0.55rem;
   margin: 0;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text-dim);
+  text-decoration: none;
   opacity: 0;
-  transition: opacity 0.6s var(--ease-standard);
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    opacity 0.6s var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
 }
 
 .terminal-hero__scroll-hint--visible {
   opacity: 0.7;
+}
+
+.terminal-hero__scroll-hint:hover,
+.terminal-hero__scroll-hint:focus-visible {
+  color: var(--color-text);
+  opacity: 1;
+  transform: translateY(2px);
+}
+
+.terminal-hero__scroll-hint:focus-visible {
+  outline: 2px solid color-mix(in srgb, #10b981 62%, transparent);
+  outline-offset: 0.25rem;
 }
 
 .terminal-hero__scroll-arrow {

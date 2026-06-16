@@ -126,14 +126,15 @@ export function TerminalHero() {
           </div>
         </div>
 
-        <p
+        <a
+          href="#work"
           className={`terminal-hero__scroll-hint ${isComplete || prefersReducedMotion ? 'terminal-hero__scroll-hint--visible' : ''}`}
         >
           <span>Scroll to continue</span>
           <span className="terminal-hero__scroll-arrow" aria-hidden="true">
             ↓
           </span>
-        </p>
+        </a>
       </div>
     </section>
   )
