@@ -4,21 +4,7 @@ import { WorkWindows } from './components/WorkWindows'
 import './App.css'
 import { contactLinks } from './data/content'
 import { useThemePreference } from './hooks/useThemePreference'
-
-const navItems = [
-  { label: 'Work', href: '#work' },
-  { label: 'Contact info', href: '#contact-info' },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/juliovillalvazo',
-    external: true,
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/juliovillalvazo',
-    external: true,
-  },
-]
+import { navItems } from './utils/navigation'
 
 function App() {
   const { theme, toggleTheme } = useThemePreference()

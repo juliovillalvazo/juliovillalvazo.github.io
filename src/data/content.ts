@@ -154,7 +154,7 @@ export const experiences: ExperienceItem[] = [
     id: 'experience-imagine-learning',
     company: 'Imagine Learning / Encora',
     website: 'https://www.imaginelearning.com',
-    dateRange: 'May 2024 - Present',
+    dateRange: 'May 2024 - August 2025',
     context: 'Education platform work · UI systems and backend modernization',
     roleSummary:
       'Delivered platform improvements, reusable UI systems, and backend modernization work across React, TypeScript, Kotlin, and Micronaut.',

@@ -1,14 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
+import type { NavItem } from '../utils/navigation'
 import './FloatingMenu.css'
 
-interface MenuItem {
-  label: string
-  href: string
-  external?: boolean
-}
-
 interface FloatingMenuProps {
-  items: MenuItem[]
+  items: NavItem[]
   theme: 'dark' | 'light'
   onToggleTheme: () => void
 }
