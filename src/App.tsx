@@ -72,7 +72,6 @@ function App() {
 
           <div className="contact-footer__grid">
             {contactLinks
-              .filter((link) => link.id !== 'resume')
               .map((link) => (
                 <a
                   key={link.id}
@@ -80,6 +79,7 @@ function App() {
                   href={link.href}
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noreferrer' : undefined}
+                  download={link.id === 'resume' ? 'CV_JulioVillalvazo_2026.pdf' : undefined}
                 >
                   <span className="contact-footer__link-title">{link.title}</span>
                   <span className="contact-footer__link-description">{link.description}</span>

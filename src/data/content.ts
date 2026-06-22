@@ -1,3 +1,5 @@
+import resumePdf from '../assets/CV_JulioVillalvazo_2026.pdf?url'
+
 export type BrandItem = {
   id: string
   name: string
@@ -9,6 +11,7 @@ export type ExperienceItem = {
   id: string
   company: string
   website: string
+  dateRange: string
   context: string
   roleSummary: string
   highlights: string[]
@@ -76,6 +79,7 @@ export const experiences: ExperienceItem[] = [
     id: 'experience-amazon-audible',
     company: 'Amazon Audible',
     website: 'https://www.audible.com',
+    dateRange: 'June 2025 - Present',
     context: 'Current work · Audiobooks, AI validation, moderation, synchronization',
     roleSummary:
       'Built audio-centered platforms, AI-powered validation workflows, and moderation systems for audiobook publishing and synchronization.',
@@ -102,6 +106,7 @@ export const experiences: ExperienceItem[] = [
     id: 'experience-visa-tcs',
     company: 'Visa / TCS',
     website: 'https://www.visa.com/en-us',
+    dateRange: 'April 2026 - Present',
     context: 'Current work · Fraud detection, distributed systems, secure deployment',
     roleSummary:
       'Contributed to fraud detection systems built on Java microservices, event-driven workflows, secure deployment configuration, and cloud infrastructure.',
@@ -117,6 +122,7 @@ export const experiences: ExperienceItem[] = [
     id: 'experience-google-alphabet',
     company: 'Google / Alphabet',
     website: 'https://about.google',
+    dateRange: 'April 2024 - September 2024',
     context: 'Cloud platform work · API management and policy-driven delivery',
     roleSummary:
       'Worked on API management and deployment workflows in a high-scale cloud environment using ApigeeX and secure policy-driven design.',
@@ -132,6 +138,7 @@ export const experiences: ExperienceItem[] = [
     id: 'experience-usaa',
     company: 'USAA',
     website: 'https://www.usaa.com',
+    dateRange: 'September 2024 - December 2025',
     context: 'Enterprise platform work · Internal modernization and delivery',
     roleSummary:
       'Built internal platform features with Java and React, contributing to modernization work through maintainable full-stack architecture.',
@@ -147,6 +154,7 @@ export const experiences: ExperienceItem[] = [
     id: 'experience-imagine-learning',
     company: 'Imagine Learning / Encora',
     website: 'https://www.imaginelearning.com',
+    dateRange: 'May 2024 - Present',
     context: 'Education platform work · UI systems and backend modernization',
     roleSummary:
       'Delivered platform improvements, reusable UI systems, and backend modernization work across React, TypeScript, Kotlin, and Micronaut.',
@@ -162,6 +170,7 @@ export const experiences: ExperienceItem[] = [
     id: 'experience-cyberpuerta',
     company: 'Cyberpuerta',
     website: 'https://www.cyberpuerta.mx',
+    dateRange: 'March 2023 - April 2024',
     context: 'Mobile product work · Performance, onboarding, UI delivery',
     roleSummary:
       'Built mobile onboarding and UI systems with performance-focused React Native architecture and component-scale delivery.',
@@ -273,7 +282,7 @@ export const contactLinks = [
     id: 'resume',
     title: 'Resume',
     description: 'Download the latest version of my resume.',
-    href: '/resume.pdf',
+    href: resumePdf,
     external: false,
   },
 ]

@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import resumePdf from '../assets/CV_JulioVillalvazo_2026.pdf?url'
 import { useTypingText } from '../hooks/useTypingText'
 import './TerminalHero.css'
 
@@ -120,6 +121,13 @@ export function TerminalHero() {
                   rel="noreferrer"
                 >
                   LinkedIn
+                </a>
+                <a
+                  href={resumePdf}
+                  className="terminal-hero__link"
+                  download="CV_JulioVillalvazo_2026.pdf"
+                >
+                  Resume
                 </a>
               </div>
             </div>

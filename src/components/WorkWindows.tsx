@@ -283,6 +283,16 @@ export function WorkWindows() {
                                     }}
                                 >
                                     <div className='work-window__heading-row'>
+                                        <div className='work-window__meta'>
+                                            <span className='work-window__date'>
+                                                {experience.dateRange}
+                                            </span>
+                                            <span className='work-window__open-cue'>
+                                                {isActive
+                                                    ? 'Details open'
+                                                    : 'Open details'}
+                                            </span>
+                                        </div>
                                         <div className='work-window__title'>
                                             <span className='work-window__title-logo-frame'>
                                                 {assets.logo ? (
@@ -348,6 +358,9 @@ export function WorkWindows() {
                                     className='work-window__details'
                                     hidden={!isActive || isMinimized}
                                 >
+                                    <p className='work-window__date-detail'>
+                                        {experience.dateRange}
+                                    </p>
                                     <p className='work-window__context'>
                                         {experience.context}
                                     </p>
