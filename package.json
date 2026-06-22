@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "audit": "pnpm audit --audit-level high",
+    "check": "pnpm lint && pnpm audit --audit-level high && pnpm build",
     "preview": "vite preview"
   },
   "dependencies": {
