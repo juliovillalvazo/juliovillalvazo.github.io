@@ -6,6 +6,7 @@ import {
     getWorkWindowStyle,
 } from '../../utils/workWindow';
 import { CompanyLogo } from './CompanyLogo';
+import { HeadphonesTabIcon } from './HeadphonesTabIcon';
 import { WindowActionButton } from './WindowActionButton';
 import { WorkWindowDetails } from './WorkWindowDetails';
 import { WorkWindowPreview } from './WorkWindowPreview';
@@ -95,6 +96,7 @@ export function WorkWindow({
                     />
                 </div>
                 <div className='work-window__path'>
+                    <HeadphonesTabIcon />
                     {experience.company.toLowerCase()}
                 </div>
             </div>

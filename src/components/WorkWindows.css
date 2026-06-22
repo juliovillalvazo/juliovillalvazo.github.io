@@ -305,6 +305,40 @@
   white-space: nowrap;
 }
 
+.work-window__tab-icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  overflow: visible;
+  color: var(--window-accent);
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--window-accent) 42%, transparent));
+}
+
+.work-window__tab-icon-arc,
+.work-window__tab-icon-band,
+.work-window__tab-icon-cup,
+.work-window__tab-icon-wave {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.work-window__tab-icon-arc {
+  stroke-width: 1.8;
+  opacity: 0.95;
+}
+
+.work-window__tab-icon-band,
+.work-window__tab-icon-wave {
+  stroke-width: 1.25;
+  opacity: 0.64;
+}
+
+.work-window__tab-icon-cup {
+  stroke-width: 1.6;
+}
+
 .work-window__body {
   display: grid;
   gap: var(--space-5);
